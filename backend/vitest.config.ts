@@ -7,6 +7,10 @@ export default defineConfig({
     globals: true,
     root: './',
     include: ['src/**/*.{test,spec}.ts', 'test/**/*.{test,spec}.ts'],
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'html', 'lcov'],
+    },
   },
   plugins: [
     tsconfigPaths(),
