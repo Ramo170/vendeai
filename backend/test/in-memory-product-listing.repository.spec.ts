@@ -1,5 +1,5 @@
-import { ProductListing } from 'src/modules/products/domain/entities/product-listing.entity';
-import { InMemoryProductListingRepository } from 'src/modules/products/infra/repositories/in-memory-product-listing.repository';
+import { ProductListing } from 'src/modules/products/domain/entities/product-listing.entity.js';
+import { InMemoryProductListingRepository } from 'src/modules/products/infra/repositories/in-memory-product-listing.repository.js';
 
 describe('InMemoryProductListingRepository', () => {
   it('deve salvar um anuncio', async () => {
@@ -12,7 +12,7 @@ describe('InMemoryProductListingRepository', () => {
       categoryId: 'categor-1',
     });
     await repository.create(listing);
-    expect(repository.items).toHaveLastReturnedWith(1);
+    expect(repository.items).toHaveLength(1);
     expect(repository.items[0]).toBe(listing);
   });
 });
