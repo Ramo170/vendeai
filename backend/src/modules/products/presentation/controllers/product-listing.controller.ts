@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post, Get } from '@nestjs/common';
 import { CreateProductListingUseCase } from '../../application/use-cases/create-product-listing.use-case.js';
 import { CreateProductListingDto } from '../dtos/create-product-listing.dto.js';
 import { FindAllProductListingsUseCase } from '../../application/use-cases/find-all-product-listings.use-case.js';
@@ -16,5 +16,7 @@ export class ProductListingController {
   }
 
   @Get()
-  async;
+  async findALl() {
+    return this.findAllProductListingUseCase.execute();
+  }
 }

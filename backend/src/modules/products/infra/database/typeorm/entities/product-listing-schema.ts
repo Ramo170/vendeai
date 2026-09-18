@@ -1,4 +1,4 @@
-import { ProductListingStatus } from 'src/modules/products/domain/entities/product-listing.entity';
+import { ProductListingStatus } from '../../../../domain/entities/product-listing.entity.js';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('product_listings')
